@@ -1,0 +1,35 @@
+# Prerequisites
+*.d
+
+# Python environment and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# Jupyter Notebooks
+.notebooks/
+
+# Data and Models
+data/raw/*
+data/processed/*
+data/evaluation/*
+data/gallery/*
+data/test/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/evaluation/.gitkeep
+!data/gallery/.gitkeep
+
+models/*
+!models/.gitkeep
+
+# IDEs and OS files
+.vscode/
+.idea/
+.DS_Store
+*.swp

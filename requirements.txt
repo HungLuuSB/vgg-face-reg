@@ -1,0 +1,19 @@
+# Core Deep Learning Framework (Python 3.12+ support begins at 2.2.0)
+torch>=2.2.0
+torchvision>=0.17.0
+
+# Computer Vision & Image Processing
+opencv-python>=4.9.0.80
+
+# Face Detection (PyTorch-Native MTCNN)
+facenet-pytorch>=2.6.0
+
+# Data Computation & Evaluation Metrics
+numpy>=1.26.4
+scikit-learn>=1.4.1
+
+# Visualization (For generating the ROC curve for your Typst paper)
+matplotlib>=3.8.3
+
+# Progres Bar
+tqdm>=4.66.2
