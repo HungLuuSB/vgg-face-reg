@@ -90,7 +90,8 @@ class FaceMatcher:
         effective_k: int = min(self.k, gallery_size)
 
         # 2. Find the top-k highest similarity scores and their indices
-        topk_scores, topk_indices = torch.topk(similarities, effective_k)
+        # TODO: Change this back to effective_k
+        topk_scores, topk_indices = torch.topk(similarities, 5)
 
         # 3. Extract the labels of the top-k nearest neighbors
         nearest_labels: List[str] = [

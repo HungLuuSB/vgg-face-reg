@@ -58,7 +58,8 @@ pip install -r requirements.txt
 Place your raw `.mp4` video files into `data/raw/` (ensure files are uniquely named per identity, e.g., `Alice.mp4`). Extract temporally spaced frames using the dynamic extraction tool:
 
 ```bash
-PYTHONPATH=src python src/utils/video.py -i data/raw -o data/processed --fps 3.0
+PYTHONPATH=src python src/utils/video.py -i data/raw -o data/processed --fps 9.0
+PYTHONPATH=src python src/utils/video.py -i data/test -o data/evaluation --fps 9.0
 ```
 
 **Phase 2: Building the Reference Gallery**
@@ -78,7 +79,7 @@ To calculate your system's exact Equal Error Rate (EER) threshold based on your 
 2. Generate the Genuine/Imposter pair ledger:
 
 ```bash
-PYTHONPATH=src python src/utils/metrics.py -i data/evaluation -o data/evaluation/pairs_ledger.csv
+PYTHONPATH=src python src/utils/metrics.py -i data/evaluation -o data/evaluation/pairs_ledger.csv --genuine 2000 --imposter 2000
 ```
 
 1. Run `notebooks/evaluate.ipynb` to output the optimal EER threshold ($\tau$).
