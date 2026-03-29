@@ -88,9 +88,14 @@ PYTHONPATH=src python src/utils/metrics.py -i data/evaluation -o data/evaluation
 Launch the live camera feed. Adjust the --threshold flag based on your EER calculation, or increase it (e.g., 0.93) to strictly lock out Hard Imposters (siblings/similar demographics).
 
 ```bash
-PYTHONPATH=src python src/cli/main.py \
-    --weights models/vgg_face_dag.pth \
-    --gallery data/gallery/reference.pt \
-    --threshold 0.85 \
-    --camera 0
+PYTHONPATH=src python src/cli/main.py --approach zeroshot --weights models/vgg_face_dag.pth --gallery data/gallery/reference.pt --threshold 0.85
+PYTHONPATH=src python src/cli/main.py --approach finetuned --weights models/vgg_face_finetuned.pth --threshold 0.90
+```
+
+**For the 2nd approach:**
+
+```bash
+PYTHONPATH=src python src/utils/train_finetune.py --epochs 10 --batch_size 4 --lr 0.00001
+PYTHONPATH=src python src/utils/test_finetune.py
+PYTHONPATH=src python src/utils/plot_metrics.py
 ```
