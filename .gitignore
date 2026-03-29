@@ -20,6 +20,7 @@ data/processed/*
 data/evaluation/*
 data/gallery/*
 data/test/*
+datasets/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 !data/evaluation/.gitkeep
